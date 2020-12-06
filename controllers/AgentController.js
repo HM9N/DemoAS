@@ -1,4 +1,4 @@
-const Agent = require('./models/agent')
+const Agent = require('../models/Agent')
 
 function create(req,res){
     //se inicializa una variable con los datos de mi body
