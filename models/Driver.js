@@ -1,7 +1,7 @@
-const moongose = require('mongoose');
+const mongoose = require('mongoose');
 // creo un schema para saber como debe estar guardando mi base de datos
 
-const driverSchema = new moongose.Schema({
+const driverSchema = new mongoose.Schema({
     // en lugar de pasarle un tipo puedo pasarle mas detallado
     name: {
         type:String,
@@ -18,6 +18,6 @@ const driverSchema = new moongose.Schema({
 
 });
 
-const Driver = moongose.model('Driver',driverSchema);
+const Driver = mongoose.model('Driver',driverSchema);
 
 module.exports = Driver;

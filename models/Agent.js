@@ -1,7 +1,7 @@
-const moongose = require('mongoose');
+const mongoose = require('mongoose');
 // creo un schema para saber como debe estar guardando mi base de datos
 
-const agentSchema = new moongose.Schema({
+const agentSchema = new mongoose.Schema({
     // en lugar de pasarle un tipo puedo pasarle mas detallado
     name: {
         type:String,
@@ -23,6 +23,6 @@ const agentSchema = new moongose.Schema({
 
 });
 
-const Agent = moongose.model('Agent',agentSchema);
+const Agent = mongoose.model('Agent',agentSchema);
 
 module.exports = Agent;

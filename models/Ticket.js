@@ -1,23 +1,31 @@
-const moongose = require('mongoose');
+const mongoose = require('mongoose');
 // creo un schema para saber como debe estar guardando mi base de datos
 
-const ticketSchema = new moongose.Schema({
+const ticketSchema = new mongoose.Schema({
     // en lugar de pasarle un tipo puedo pasarle mas detallado
-    name: {
+    description: {
         type:String,
         required: true
     },
-    cc: {
-        type:Number,
-        required: true
-    },
-    car: {
+    driver: {
         type: Number,
         required: true
+    },
+    code:{
+        type: String,
+        required: true,
+        unique: true
+    },
+    location:{
+        type: String,
+        required: true
+    },
+    date:{
+        type: Date,
+        default: Date.now()
     }
-
 });
 
-const Ticket = moongose.model('Ticket',ticketSchema);
+const Ticket = mongoose.model('Ticket',ticketSchema);
 
 module.exports = Ticket;
