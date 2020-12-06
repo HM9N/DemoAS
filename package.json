@@ -1,5 +1,5 @@
 {
-  "name": "DemoAS",
+  "name": "trafficTicket",
   "version": "1.0.0",
   "description": "Demo del proyecto de Arquitectura de Software",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HM9N/DemoAS.git"
+    "url": "git+https://github.com/HM9N/trafficTicket.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HM9N/DemoAS/issues"
+    "url": "https://github.com/HM9N/trafficTicket/issues"
   },
-  "homepage": "https://github.com/HM9N/DemoAS#readme",
+  "homepage": "https://github.com/HM9N/trafficTicket#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
