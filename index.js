@@ -1,13 +1,17 @@
-const express = require('express');
+const database = require('./config/database');
+const CONFIG = require('./config/config');
+const app = require('./app');
+// conectar
+database.connect();
 
-const app = express();
 
-const port = process.env.PORT || 3000 ;
 
 app.get('/',(req,res)=>{
     res.send('Demo');
 });
 
-app.listen(port, ()=>{
-    console.log("el servidor está corriendo");
-})
+//decir que nuestra app escuche en el puerto
+app.listen(CONFIG.PORT, function(error){
+    if(error) return console.log(error);
+    console.log(`Servidor corriendo en el puerto ${CONFIG.PORT}`);
+});
