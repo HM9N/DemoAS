@@ -1,0 +1,23 @@
+{
+  "name": "DemoAS",
+  "version": "1.0.0",
+  "description": "Demo del proyecto de Arquitectura de Software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HM9N/DemoAS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HM9N/DemoAS/issues"
+  },
+  "homepage": "https://github.com/HM9N/DemoAS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
