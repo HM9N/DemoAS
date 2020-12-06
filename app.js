@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const Agent = require("./routes/agent")
 
 const app = express();
 
@@ -29,5 +30,6 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/agent', Agent);
 
 module.exports = app;
