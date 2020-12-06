@@ -7,7 +7,7 @@ const app = require('./app');
 database.connect();
 
 app.get("/", (req, res) => {
-  res.send("Demo");
+  res.send({"nombre": "Juan"});
 });
 
 //decir que nuestra app escuche en el puerto
