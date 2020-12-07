@@ -18,7 +18,15 @@ function show(req, res) {
     }).catch(error => res.status(500).send({ error }));
 }
 
+function findOneByID(req,res){
+    id=req.query.id;
+    Ticket.findById(id, (err, tickets) => { 
+        (err) ? res.status(500).send({error}) :  res.status(200).send({tickets})
+    }); 
+}
+
 module.exports = {
     create,
-    show
+    show,
+    findOneByID
 }

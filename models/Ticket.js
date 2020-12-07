@@ -11,11 +11,6 @@ const ticketSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    code:{
-        type: String,
-        required: true,
-        unique: true
-    },
     location:{
         type: String,
         required: true
