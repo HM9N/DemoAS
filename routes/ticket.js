@@ -6,6 +6,7 @@ const router = express.Router();
 router.post('/', TicketController.create)
       .get('/', TicketController.show)
       .get('/:id', TicketController.findOneByID)
+      .post('/:id', TicketController.update) 
 
 
 module.exports = router;
