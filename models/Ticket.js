@@ -15,9 +15,13 @@ const ticketSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    // date:{
+    //     type: Date,
+    //     default: Date.now()
+    // },
     date:{
-        type: Date,
-        default: Date.now()
+        type: Number,
+        required:true
     },
     state:{
         type: Boolean,

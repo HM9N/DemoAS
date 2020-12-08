@@ -32,15 +32,10 @@ function findOneByID(req, res) {
 
 function update(req, res) {
     let id = req.query.id;
-
-    res.status(200).send(id);
-    res.status(200).send(value);
-    Ticket.findByIdAndUpdate(id, { state: false}, function (err, docs) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("Updated User : ", docs);
-        }
+    Ticket.findOneAndUpdate({_id: id}, {$set:{state: false}},{
+        new: false
+      },  (err, docs) => {
+        (err) ? console.log(err) : console.log("Update ", docs);
     });
 }
 
@@ -48,5 +43,5 @@ module.exports = {
     create,
     show,
     findOneByID,
-    update,
+    update
 };

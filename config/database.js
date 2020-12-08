@@ -3,7 +3,7 @@ const CONFIG = require('./config');
 
 module.exports = {
     connection: null,
-    //se hace la coneccion, arriba se inicializo
+    //se hace la conexión
     connect: () => {
         if(this.connection) return this.connection;
         return moongose.connect(CONFIG.DB).then((connection) => {
