@@ -26,8 +26,8 @@ const agentSchema = new mongoose.Schema({
         required: true
     },
      ticket:[{
-         type: mongoose.Schema.Types.ObjectId,
-         ref: "Ticket"
+         type: String,
+         required: true
      }]
 
 });

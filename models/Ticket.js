@@ -17,8 +17,7 @@ const ticketSchema = new mongoose.Schema({
         required: true
     },
     agent:{
-       type: mongoose.Schema.Types.ObjectId,
-       ref: "Agent",
+       type: Number,
        required: true
     },
      date:{
