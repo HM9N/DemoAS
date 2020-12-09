@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 // creo un schema para saber como debe estar guardando mi base de datos
 
+
 const ticketSchema = new mongoose.Schema({
     // en lugar de pasarle un tipo puedo pasarle mas detallado
     description: {
@@ -21,13 +22,14 @@ const ticketSchema = new mongoose.Schema({
        required: true
     },
      date:{
-     type: Date,
+     type: Number,
      default: Date.now()
      },
     state:{
         type: Boolean,
         default: true
     }
+    
 });
 
 const Ticket = mongoose.model('Ticket',ticketSchema);
