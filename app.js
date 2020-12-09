@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const Agent = require("./routes/agent");
-const Ticket = require("./routes/ticket")
+const Ticket = require("./routes/ticket");
+const Auth = require("./routes/auth")
 
 const app = express();
 
@@ -33,4 +34,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/agent', Agent);
 app.use('/ticket', Ticket);
+app.use('/signin', Auth);
 module.exports = app;

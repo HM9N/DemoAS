@@ -12,24 +12,10 @@ function create(req, res) {
         );
 }
 
-// function show(req, res) {
-//     console.log(req.body);
-//     Ticket.find({})
-//         .then((tickets) => {
-//             if (tickets.length) return res.status(200).send({ tickets });
-//             return res.status(204).send({ message: "NO CONTENT" });
-//         })
-//         .catch((error) => res.status(500).send({ error }));
-// }
-
 function show(req, res) {
     const search ={};
-    console.log(Object.keys(req.body)[0]);
-    console.log(req.body.agent);
-    console.log(Object.keys(req.body).length);
     if (Object.keys(req.body)[0]==="agent" && Object.keys(req.body).length===1) {
         search.agent = req.body.agent;
-       
     }
     if (Object.keys(req.body).length===3) {
         search.agent = req.body.agent;
@@ -37,7 +23,7 @@ function show(req, res) {
     }
     Ticket.find(search, (err, docs) => { 
         (err) ? console.log(err) : res.status(201).send({"tickets": docs});
-    }).populate("agents"); 
+    }); 
 }
 
 

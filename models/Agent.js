@@ -21,6 +21,10 @@ const agentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    password:{
+        type: String,
+        required: true
+    },
      ticket:[{
          type: mongoose.Schema.Types.ObjectId,
          ref: "Ticket"
