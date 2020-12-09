@@ -3,7 +3,7 @@ const AgentController = require('../controllers/AgentController');
 const router = express.Router();
 
 // Rutas
-router.post('/', AgentController.create);
+router.post('/', AgentController.create)
 
 
 module.exports = router;
