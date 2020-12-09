@@ -36,7 +36,7 @@ function show(req, res) {
         search.date = {$gt: req.body.startDate, $lt: req.body.endDate};
     }
     Ticket.find(search, (err, docs) => { 
-        (err) ? console.log(err) : res.status(201).send({"First function call  ": docs});
+        (err) ? console.log(err) : res.status(201).send({"tickets": docs});
     }).populate("agents"); 
 }
 
