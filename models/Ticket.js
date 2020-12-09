@@ -15,14 +15,15 @@ const ticketSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // date:{
-    //     type: Date,
-    //     default: Date.now()
-    // },
-    date:{
-        type: Number,
-        required:true
+    agent:{
+       type: mongoose.Schema.Types.ObjectId,
+       ref: "Agent",
+       required: true
     },
+     date:{
+     type: Date,
+     default: Date.now()
+     },
     state:{
         type: Boolean,
         default: true

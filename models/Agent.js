@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
+const { schema } = require('./Ticket');
 // creo un schema para saber como debe estar guardando mi base de datos
 
 const agentSchema = new mongoose.Schema({
-    // en lugar de pasarle un tipo puedo pasarle mas detallado
+    
     name: {
         type:String,
         required: true
     },
-    code: {
-        type:String,
+    cc: {
+        type:Number,
         unique: true,
         required: true
     },
@@ -19,7 +20,11 @@ const agentSchema = new mongoose.Schema({
     location:{
         type: String,
         required: true
-    }
+    },
+     ticket:[{
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "Ticket"
+     }]
 
 });
 
