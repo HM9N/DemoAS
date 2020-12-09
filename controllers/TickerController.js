@@ -24,9 +24,12 @@ function create(req, res) {
 
 function show(req, res) {
     const search ={};
-    console.log(Object.keys(req.body));
-    if (Object.keys(req.body)==="agent" && Object.keys(req.body).length===1) {
+    console.log(Object.keys(req.body)[0]);
+    console.log(req.body.agent);
+    console.log(Object.keys(req.body).length);
+    if (Object.keys(req.body)[0]==="agent" && Object.keys(req.body).length===1) {
         search.agent = req.body.agent;
+       
     }
     if (Object.keys(req.body).length===3) {
         search.agent = req.body.agent;
