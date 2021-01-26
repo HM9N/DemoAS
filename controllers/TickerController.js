@@ -15,17 +15,15 @@ function create(req, res) {
 
 // find tickets on DB
 function show(req, res) {
-    console.log(req.body);
+    const { driver, startDate, endDate } = req.query;
 
     const search ={};
-    if (Object.keys(req.body)[0]==="agent" && Object.keys(req.body).length===1) {
-        search.agent = req.body.agent;
+
+    if(driver && driver !== 'NaN'){
+        search.driver = parseInt(driver);
     }
-    if (Object.keys(req.body).length===3) {
-        search.agent = req.body.agent;
-        search.date = {$gt: req.body.startDate, $lt: req.body.endDate};
-    }
-    console.log("SEARCH FILTER", search);
+    search.date = { $gte: parseInt(startDate), $lte: parseInt(endDate) }
+    
 
     Ticket.find(search, (err, docs) => { 
         (err) 
