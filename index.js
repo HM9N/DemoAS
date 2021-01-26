@@ -7,8 +7,12 @@ const app = require('./app');
 database.connect();
 
 app.get("/", (req, res) => {
-  res.send(`<a href="https://documenter.getpostman.com/view/12161478/TVmQeG72">Documentación de la API</a><br>
- Autor: Jhon Vásquez` );
+  res.send(`
+  <a href="https://documenter.getpostman.com/view/12161478/TVmQeG72">Documentación de la API</a>
+  <br>
+  Autor: Jhon Vásquez
+  version: 0.3`
+  );
 });
 
 //decir que nuestra app escuche en el puerto

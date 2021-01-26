@@ -24,6 +24,7 @@ function show(req, res) {
     }
     search.date = { $gte: parseInt(startDate), $lte: parseInt(endDate) }
     
+    console.log('SEARCH', search);
 
     Ticket.find(search, (err, docs) => { 
         (err) 
