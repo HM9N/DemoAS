@@ -1,5 +1,6 @@
 const Ticket = require("../models/Ticket");
 
+// creates a ticket on DB
 function create(req, res) {
     //se inicializa una variable con los datos de mi body
     let ticket = new Ticket(req.body);
@@ -12,7 +13,10 @@ function create(req, res) {
         );
 }
 
+// find tickets on DB
 function show(req, res) {
+    console.log(req.body);
+
     const search ={};
     if (Object.keys(req.body)[0]==="agent" && Object.keys(req.body).length===1) {
         search.agent = req.body.agent;
@@ -21,12 +25,16 @@ function show(req, res) {
         search.agent = req.body.agent;
         search.date = {$gt: req.body.startDate, $lt: req.body.endDate};
     }
+    console.log("SEARCH FILTER", search);
+
     Ticket.find(search, (err, docs) => { 
-        (err) ? console.log(err) : res.status(201).send({"tickets": docs});
-    }); 
+        (err) 
+            ? console.log(err) 
+            : res.status(201).send({"tickets": docs});
+    });
 }
 
-
+// fin one ticket on DB
 function findOneByID(req, res) {
     let id = req.query.id;
     Ticket.findById(id, (err, tickets) => {
@@ -36,6 +44,7 @@ function findOneByID(req, res) {
     });
 }
 
+// updates a ticket
 function update(req, res) {
     let id = req.query.id;
     Ticket.findOneAndUpdate({_id: id}, {$set:{state: false}},{

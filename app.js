@@ -1,5 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+
+// ROUTES
 const Agent = require("./routes/agent");
 const Ticket = require("./routes/ticket");
 const Auth = require("./routes/auth")
@@ -32,7 +34,10 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// APPLY ROUTES
 app.use('/agent', Agent);
 app.use('/ticket', Ticket);
 app.use('/signin', Auth);
+
 module.exports = app;
